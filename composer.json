@@ -1,10 +1,10 @@
 {
     "name": "miraiportal/afterglow",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "require": {
         "php": "^8.5",
-        "dolthub/doltlite-php": "^0.50.14",
+        "dolthub/doltlite-php": "^0.50.17",
         "illuminate/contracts": "^13.0",
         "illuminate/support": "^13.0"
     },
