@@ -19,11 +19,16 @@ final class Afterglow extends Doltlite3
 
     private readonly SyncedFile $file;
 
-    public function __construct(int $flags = DOLTLITE3_OPEN_READWRITE | DOLTLITE3_OPEN_CREATE)
-    {
+    /**
+     * @param  array<mixed>  $overrides
+     */
+    public function __construct(
+        int $flags = DOLTLITE3_OPEN_READWRITE | DOLTLITE3_OPEN_CREATE,
+        array $overrides = [],
+    ) {
         $this->statements = new \WeakMap;
 
-        $config = Config::array('afterglow.connection');
+        $config = array_replace_recursive(Config::array('afterglow.connection'), $overrides);
 
         if ($readOnly = ($flags & DOLTLITE3_OPEN_READONLY) !== 0) {
             $config = array_replace_recursive($config, [
