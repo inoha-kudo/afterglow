@@ -11,10 +11,7 @@ final class AfterglowServiceProvider extends ServiceProvider
     #[\Override]
     public function register(): void
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/afterglow.php',
-            'afterglow',
-        );
+        $this->mergeConfigFrom(__DIR__.'/../config/afterglow.php', 'afterglow');
     }
 
     public function boot(): void
